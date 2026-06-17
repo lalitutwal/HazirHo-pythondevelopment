@@ -31,11 +31,11 @@ def verify_images(image_path_1, image_path_2):
     )
 
     # 4. Optional: Calculate the raw mathematical distance (lower distance = closer match)
-    # distance = face_recognition.face_distance([encoding_1], encoding_2)[0]
+    distance = face_recognition.face_distance([encoding_1], encoding_2)[0]
 
     return {
         "same_person": bool(matches[0]),
-        # "distance_score": round(float(distance), 4),
+        "distance_score": round(float(distance), 4),
         "tolerance_threshold": TOLERANCE,
     }
 
