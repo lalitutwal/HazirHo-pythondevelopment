@@ -47,8 +47,8 @@ def verify_images(image_path_1, image_path_2):
 
 
 if __name__ == "__main__":
-    file_a = "person1.jpg"
-    file_b = "person2.jpg"
+    file_a = "person1.jpeg"
+    file_b = "person2.jpeg"
 
     print(f"[START] Testing verification for {file_a} and {file_b}...")
     output = verify_images(file_a, file_b)
