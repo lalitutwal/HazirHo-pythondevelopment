@@ -1,6 +1,7 @@
 import os
 import face_recognition
 
+# this is a module for comparing and creating face encodings
 
 def image_exists(
 	image_path):
@@ -20,10 +21,10 @@ def create_encoding(
         return {"error": f"No face found in {image_path}."}
 
 
-def verify_encodings(
+def compare_encodings(
 	encoding_1,
 	encoding_2):
-    print("[INFO] verify_encodings function initiated...")
+    print("[INFO] compare_encodings function initiated...")
     result = face_recognition.compare_faces([encoding_1], encoding_2, tolerance=0.6)
     return result
 
@@ -44,7 +45,7 @@ def verify_images(
     encoding_1 = create_encoding(image_path_1)
     encoding_2 = create_encoding(image_path_2)
 
-    matches = verify_encodings(encoding_1, encoding_2)
+    matches = compare_encodings(encoding_1, encoding_2)
 
    # distance = face_recognition.face_distance([encoding_1], encoding_2)[0]
 
